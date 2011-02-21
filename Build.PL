@@ -12,6 +12,7 @@ my %module_build_args = (
     'File::Temp' => '0',
     'FindBin' => '0',
     'Module::Build' => '0.3601',
+    'Test::Fatal' => '0',
     'Test::More' => '0.96'
   },
   'configure_requires' => {
@@ -22,7 +23,7 @@ my %module_build_args = (
     'Kent Fredric <kentnl@cpan.org>'
   ],
   'dist_name' => 'Gentoo-MetaEbuild-Spec-Base',
-  'dist_version' => '0.1.1',
+  'dist_version' => '0.1.2',
   'license' => 'perl',
   'module_name' => 'Gentoo::MetaEbuild::Spec::Base',
   'recommends' => {},
@@ -40,6 +41,7 @@ my %module_build_args = (
     'MooseX::Types::Perl' => '0',
     'Path::Class' => '0',
     'Scalar::Util' => '0',
+    'namespace::autoclean' => '0',
     'version' => '0'
   },
   'script_files' => [],

@@ -3,7 +3,7 @@ NAME
     Specifications.
 
 VERSION
-    version 0.1.1
+    version 0.1.2
 
 SYNOPSIS
         use Gentoo::MetaEbuild::Spec::Base; # or some derived class

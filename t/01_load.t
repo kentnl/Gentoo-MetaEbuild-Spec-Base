@@ -13,6 +13,6 @@ use Gentoo::MetaEbuild::Spec::Base;
 
 Gentoo::MetaEbuild::Spec::Base->_spec_dir($sharedir);
 
-ok( Gentoo::MetaEbuild::Spec::Base->check( {} ) );
+ok( Gentoo::MetaEbuild::Spec::Base->check( {} ), '{} is default spec' );
 
 done_testing;

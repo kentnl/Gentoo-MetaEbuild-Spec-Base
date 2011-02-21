@@ -13,7 +13,12 @@ share/v0.1.0.json
 t/00-compile.t
 t/000-report-versions-tiny.t
 t/01_load.t
+t/02_fake_versions.t
+t/03_fake_versions_missing.t
+t/04_fake_versions_object.t
 t/author-critic.t
+t/fake_spec/v0.1.0.json
+t/fake_spec/v0.1.1.json
 t/release-distmeta.t
 t/release-eol.t
 t/release-kwalitee.t

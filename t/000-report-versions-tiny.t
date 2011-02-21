@@ -67,7 +67,9 @@ eval { $v .= pmver('MooseX::Types::Path::Class','any version') };
 eval { $v .= pmver('MooseX::Types::Perl','any version') };
 eval { $v .= pmver('Path::Class','any version') };
 eval { $v .= pmver('Scalar::Util','any version') };
+eval { $v .= pmver('Test::Fatal','any version') };
 eval { $v .= pmver('Test::More','0.96') };
+eval { $v .= pmver('namespace::autoclean','any version') };
 eval { $v .= pmver('version','any version') };
 
 
