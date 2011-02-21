@@ -148,7 +148,7 @@ sub _spec_data {
 sub _schema {
   my ( $self, $opts ) = @_;
   $opts = $self->_opt_check($opts);
-  return $self->_make_schema( $self->_spec_data, $opts );
+  return $self->_make_schema( $self->_spec_data($opts) );
 }
 
 =method check
@@ -164,7 +164,7 @@ sub _schema {
 sub check {
   my ( $self, $data, $opts ) = @_;
   $opts = $self->_opt_check($opts);
-  return $self->_schema->check($data);
+  return $self->_schema($opts)->check($data);
 }
 
 __PACKAGE__->meta->make_immutable;
