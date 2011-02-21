@@ -2,6 +2,8 @@ Release history for Gentoo-MetaEbuild-Spec-Base
 
 {{$NEXT}}
 
+        Move tests to use Test::File::ShareDir
+
 0.1.2     2011-02-21 22:38:04 Pacific/Auckland
 
         Fix ->check( .., { version => }) not working at all.
