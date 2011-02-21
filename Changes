@@ -2,6 +2,12 @@ Release history for Gentoo-MetaEbuild-Spec-Base
 
 {{$NEXT}}
 
+        Fix ->check( .., { version => }) not working at all.
+
+        Add tests for this behaviour.
+
+        Ensure to test what happens when a given spec is non-existant.
+
 0.1.1     2011-02-21 20:52:03 Pacific/Auckland
 
         Fix pesky module_dir being missing. Need a better way to test this -_-
