@@ -65,7 +65,7 @@
    "provides" : {
       "Gentoo::MetaEbuild::Spec::Base" : {
          "file" : "lib/Gentoo/MetaEbuild/Spec/Base.pm",
-         "version" : "v0.1.0"
+         "version" : "v0.1.1"
       }
    },
    "release_status" : "stable",
@@ -77,7 +77,7 @@
          "web" : "http://github.com/kentfredric/Gentoo-MetaEbuild-Spec-Base/tree"
       }
    },
-   "version" : "0.1.0",
+   "version" : "0.1.1",
    "x_BuiltWith" : {
       "modules" : {
          "Carp" : "1.17",

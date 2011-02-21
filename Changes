@@ -1,5 +1,9 @@
 Release history for Gentoo-MetaEbuild-Spec-Base
 
+0.1.1     2011-02-21 20:52:03 Pacific/Auckland
+
+        Fix pesky module_dir being missing. Need a better way to test this -_-
+
 0.1.0     2011-02-21 20:12:09 Pacific/Auckland
 
         First version, released on an unsuspecting world.

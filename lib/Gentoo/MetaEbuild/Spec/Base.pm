@@ -3,7 +3,7 @@ use warnings;
 
 package Gentoo::MetaEbuild::Spec::Base;
 BEGIN {
-  $Gentoo::MetaEbuild::Spec::Base::VERSION = '0.1.0';
+  $Gentoo::MetaEbuild::Spec::Base::VERSION = '0.1.1';
 }
 
 # ABSTRACT: A Base Class for Gentoo MetaEbuild Specifications.
@@ -13,7 +13,7 @@ BEGIN {
 use Moose;
 use MooseX::ClassAttribute;
 
-use File::ShareDir qw( module_file );
+use File::ShareDir qw( module_dir );
 use Path::Class qw( dir file );
 use MooseX::Types::Moose qw( :all );
 use MooseX::Types::Perl qw( VersionObject );
@@ -134,7 +134,7 @@ Gentoo::MetaEbuild::Spec::Base - A Base Class for Gentoo MetaEbuild Specificatio
 
 =head1 VERSION
 
-version 0.1.0
+version 0.1.1
 
 =head1 SYNOPSIS
 
