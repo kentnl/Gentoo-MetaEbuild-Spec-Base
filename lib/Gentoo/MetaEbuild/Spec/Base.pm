@@ -3,6 +3,51 @@ use warnings;
 
 package Gentoo::MetaEbuild::Spec::Base;
 
+# ABSTRACT: A Base Class for Gentoo MetaEbuild Specifications.
+
+=head1 SYNOPSIS
+
+    use Gentoo::MetaEbuild::Spec::Base; # or some derived class
+    Gentoo::MetaEbuild::Spec::Base->check( $datastructure );
+
+This base-class only validates the most basic of basic, that the data is a  { } using Data::Rx
+and using the shipped File::ShareDir v1.0.0.json spec to do that.
+
+This will be more practical in consuming classes as they'll override selected methods/ship different spec files,
+but maintain the same useful interface.
+
+=cut
+
+=head1 EXTENDING
+
+Extending should be this simple:
+
+    package FooBarBaz;
+    use Moose;
+    extends 'Gentoo::MetaEbuild::Spec::Base';
+
+    1;
+
+and then ship a directory of Data::Rx spec files as the Module ShareDir for that module.
+
+=head1 TESTING
+
+The only fun thing with testing is the File::ShareDir directory hasn't been installed yet, but its simple to get around.
+
+    use FindBin;
+    use Path::Class qw( dir );
+    use Gentoo::MetaEbuild::Spec::Base;
+
+    Gentoo::MetaEbuild::Spec::Base->_spec_dir(
+        dir($FindBin::Bin)->parent->subdir('share')
+    );
+
+    # Code as per usual.
+
+    my $shareroot = dir($FindBin::Bin)->parent();
+
+=cut
+
 use Moose;
 use MooseX::ClassAttribute;
 
@@ -12,6 +57,8 @@ use MooseX::Types::Moose qw( :all );
 use MooseX::Types::Perl qw( VersionObject );
 use MooseX::Types::Path::Class qw( Dir File );
 use Scalar::Util qw( blessed );
+use MooseX::Has::Sugar;
+
 use version;
 
 class_has '_decoder' => (
@@ -75,31 +122,37 @@ sub _build__schema_creator {
 }
 
 sub _opt_check {
-    my( $self, $opts ) = @_;
-    if( not exists $opts->{version} ){
-        $opts->{version} = $self->_version->normal;
-        return $opts;
-    }
-    $opts->{version} = version->parse( $opts->{version} )->normal;
+  my ( $self, $opts ) = @_;
+  if ( not exists $opts->{version} ) {
+    $opts->{version} = $self->_version->normal;
     return $opts;
+  }
+  $opts->{version} = version->parse( $opts->{version} )->normal;
+  return $opts;
 }
 
 sub _spec_file {
   my ( $self, $opts ) = @_;
-  $opts = $self->_opt_check( $opts );
+  $opts = $self->_opt_check($opts);
   return $self->_spec_dir->file( $opts->{version} . $self->_extension );
 }
 
 sub _spec_data {
   my ( $self, $opts ) = @_;
- $opts = $self->_opt_check( $opts );
-  return $self->_decode( scalar $self->_spec_file( $opts )->slurp() );
+  $opts = $self->_opt_check($opts);
+  return $self->_decode( scalar $self->_spec_file($opts)->slurp() );
 }
 
 sub _schema {
   my ( $self, $opts ) = @_;
-  $opts = $self->_opt_check( $opts );
+  $opts = $self->_opt_check($opts);
   return $self->_make_schema( $self->_spec_data, $opts );
+}
+
+sub check {
+  my ( $self, $data, $opts ) = @_;
+  $opts = $self->_opt_check($opts);
+  return $self->_schema->check($data);
 }
 
 __PACKAGE__->meta->make_immutable;
