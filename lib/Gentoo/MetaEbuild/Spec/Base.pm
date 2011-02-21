@@ -65,7 +65,7 @@ class_has '_decoder' => (
   isa => CodeRef,
   ro, lazy_build,
   traits  => [qw( Code )],
-  handles => { _decode => 'execute', }
+  handles => { _decode => 'execute', },
 );
 
 sub _build__decoder {
@@ -88,7 +88,9 @@ sub _build__spec_dir {
     $classname = blessed $self;
   }
   elsif ( ref $self ) {
-    die "\$_[0] is not a Class/Object";
+    require Carp;
+    ## no critic (ValuesAndExpressions::RequireInterpolationOfMetachars)
+    Carp::confess q{$_[0] is not a Class/Object};
   }
   else {
     $classname = $self;
@@ -98,19 +100,19 @@ sub _build__spec_dir {
 
 class_has '_version' => (
   isa => VersionObject,
-  coerce, ro, lazy, default => sub { q{1.0.0} }
+  coerce, ro, lazy, default => sub { q{0.1.0} },
 );
 
 class_has '_extension' => (
   isa => Str,
-  ro, lazy, default => sub { q{.json} }
+  ro, lazy, default => sub { q{.json} },
 );
 
 class_has '_schema_creator' => (
   isa => CodeRef,
   ro, lazy_build,
   traits  => [qw( Code )],
-  handles => { _make_schema => 'execute', }
+  handles => { _make_schema => 'execute', },
 );
 
 sub _build__schema_creator {
@@ -148,6 +150,16 @@ sub _schema {
   $opts = $self->_opt_check($opts);
   return $self->_make_schema( $self->_spec_data, $opts );
 }
+
+=method check
+
+    Packagename->check( $datastructure );
+
+    Packagename->check( $datastructure, \%opts );
+
+    Packagename->check( $datastructure, { version => '0.1.0' });
+
+=cut
 
 sub check {
   my ( $self, $data, $opts ) = @_;
