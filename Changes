@@ -8,6 +8,8 @@ Release history for Gentoo-MetaEbuild-Spec-Base
 
         Ensure to test what happens when a given spec is non-existant.
 
+        Add support for { version => } being a VersionObject.
+
 0.1.1     2011-02-21 20:52:03 Pacific/Auckland
 
         Fix pesky module_dir being missing. Need a better way to test this -_-

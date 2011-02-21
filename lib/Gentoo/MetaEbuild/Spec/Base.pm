@@ -58,8 +58,9 @@ use MooseX::Types::Perl qw( VersionObject );
 use MooseX::Types::Path::Class qw( Dir File );
 use Scalar::Util qw( blessed );
 use MooseX::Has::Sugar;
-
 use version;
+
+use namespace::autoclean;
 
 class_has '_decoder' => (
   isa => CodeRef,
@@ -126,17 +127,19 @@ sub _build__schema_creator {
 sub _opt_check {
   my ( $self, $opts ) = @_;
   if ( not exists $opts->{version} ) {
-    $opts->{version} = $self->_version->normal;
-    return $opts;
+    $opts->{version} = $self->_version;
+  } elsif( blessed $opts->{version} ){
+
+  } else {
+    $opts->{version} = version->parse( $opts->{version} );
   }
-  $opts->{version} = version->parse( $opts->{version} )->normal;
   return $opts;
 }
 
 sub _spec_file {
   my ( $self, $opts ) = @_;
   $opts = $self->_opt_check($opts);
-  return $self->_spec_dir->file( $opts->{version} . $self->_extension );
+  return $self->_spec_dir->file( $opts->{version}->normal . $self->_extension );
 }
 
 sub _spec_data {
