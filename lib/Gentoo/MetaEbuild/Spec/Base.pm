@@ -3,7 +3,7 @@ use warnings;
 
 package Gentoo::MetaEbuild::Spec::Base;
 BEGIN {
-  $Gentoo::MetaEbuild::Spec::Base::VERSION = '0.1.2';
+  $Gentoo::MetaEbuild::Spec::Base::VERSION = '0.1.3';
 }
 
 # ABSTRACT: A Base Class for Gentoo MetaEbuild Specifications.
@@ -137,7 +137,7 @@ Gentoo::MetaEbuild::Spec::Base - A Base Class for Gentoo MetaEbuild Specificatio
 
 =head1 VERSION
 
-version 0.1.2
+version 0.1.3
 
 =head1 SYNOPSIS
 

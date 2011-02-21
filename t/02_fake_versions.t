@@ -3,12 +3,11 @@ use warnings;
 
 use Test::More 0.96;
 use FindBin;
-use Path::Class qw( dir );
-
-my $sharedir = dir($FindBin::Bin)->subdir('fake_spec');
+use Test::File::ShareDir
+  -root  => "$FindBin::Bin/../",
+  -share => { -module => { 'Gentoo::MetaEbuild::Spec::Base' => 't/fake_spec' } };
 
 use Gentoo::MetaEbuild::Spec::Base;
-Gentoo::MetaEbuild::Spec::Base->_spec_dir($sharedir);
 
 ok( Gentoo::MetaEbuild::Spec::Base->check( {}, { version => '0.1.0' } ), ' {} is 0.1.0 spec' );
 ok( !Gentoo::MetaEbuild::Spec::Base->check( [], { version => '0.1.0' } ), '[] is not 0.1.0 spec' );

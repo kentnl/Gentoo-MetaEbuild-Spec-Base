@@ -9,6 +9,7 @@ build_requires:
   FindBin: 0
   Module::Build: 0.3601
   Test::Fatal: 0
+  Test::File::ShareDir: 0
   Test::More: 0.96
 configure_requires:
   Module::Build: 0.3601
@@ -22,7 +23,7 @@ name: Gentoo-MetaEbuild-Spec-Base
 provides:
   Gentoo::MetaEbuild::Spec::Base:
     file: lib/Gentoo/MetaEbuild/Spec/Base.pm
-    version: v0.1.2
+    version: v0.1.3
 requires:
   Carp: 0
   Data::Rx: 0
@@ -41,7 +42,7 @@ requires:
 resources:
   homepage: http://github.com/kentfredric/Gentoo-MetaEbuild-Spec-Base/tree
   repository: git://github.com/kentfredric/Gentoo-MetaEbuild-Spec-Base.git
-version: 0.1.2
+version: 0.1.3
 x_BuiltWith:
   modules:
     Carp: 1.17
@@ -62,6 +63,7 @@ x_BuiltWith:
     Path::Class: 0.23
     Scalar::Util: 1.23
     Test::Fatal: 0.003
+    Test::File::ShareDir: 0.1.0
     Test::More: 0.96
     namespace::autoclean: 0.12
     version: 0.88
