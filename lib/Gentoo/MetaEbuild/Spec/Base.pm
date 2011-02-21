@@ -51,7 +51,7 @@ The only fun thing with testing is the File::ShareDir directory hasn't been inst
 use Moose;
 use MooseX::ClassAttribute;
 
-use File::ShareDir qw( module_file );
+use File::ShareDir qw( module_dir );
 use Path::Class qw( dir file );
 use MooseX::Types::Moose qw( :all );
 use MooseX::Types::Perl qw( VersionObject );
