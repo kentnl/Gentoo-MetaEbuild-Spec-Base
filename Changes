@@ -1,6 +1,26 @@
 Release history for Gentoo-MetaEbuild-Spec-Base
 
 {{$NEXT}}
+ - Maintenance release.
+
+ [Dependencies::Added]
+ - requires: strict
+ - requires: warnings
+ - requires: perl 5.10.0
+
+ [Dependencies::Removed]
+ - build_requires: English
+
+ [Internals]
+ - All namespaces declare AUTHORITY
+ - VERSION no longer declared in BEGIN
+
+ [Packaging]
+ - migrate Changes format to CPAN::Changes
+ - Update Copyright years, formatting and address.
+ - Move author/release tests to xt/
+ - Repository urls moved to https://
+ - x_authority added to metadata.
 
 0.1.3 2011-02-21T13:40:12Z
  - Move tests to use Test::File::ShareDir
