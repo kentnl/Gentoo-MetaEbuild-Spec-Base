@@ -3,7 +3,10 @@ use warnings;
 
 package Gentoo::MetaEbuild::Spec::Base;
 BEGIN {
-  $Gentoo::MetaEbuild::Spec::Base::VERSION = '0.1.3';
+  $Gentoo::MetaEbuild::Spec::Base::AUTHORITY = 'cpan:KENTNL';
+}
+{
+  $Gentoo::MetaEbuild::Spec::Base::VERSION = '0.1.4';
 }
 
 # ABSTRACT: A Base Class for Gentoo MetaEbuild Specifications.
@@ -137,7 +140,7 @@ Gentoo::MetaEbuild::Spec::Base - A Base Class for Gentoo MetaEbuild Specificatio
 
 =head1 VERSION
 
-version 0.1.3
+version 0.1.4
 
 =head1 SYNOPSIS
 
@@ -194,7 +197,7 @@ Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2011 by Kent Fredric <kentnl@cpan.org>.
+This software is copyright (c) 2012 by Kent Fredric <kentnl@cpan.org>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
