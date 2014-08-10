@@ -5,7 +5,7 @@ use utf8;
 
 package Gentoo::MetaEbuild::Spec::Base;
 
-our $VERSION = '1.000000';
+our $VERSION = '1.000001';
 
 # ABSTRACT: A Base Class for Gentoo MetaEbuild Specifications.
 
