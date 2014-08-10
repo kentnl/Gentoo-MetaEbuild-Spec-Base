@@ -41,16 +41,16 @@ and then ship a directory of Data::Rx spec files as the Module ShareDir for that
 The only fun thing with testing is the File::ShareDir directory hasn't been installed yet, but its simple to get around.
 
     use FindBin;
-    use Path::Class qw( dir );
+    use Path::Tiny qw( path );
     use Gentoo::MetaEbuild::Spec::Base;
 
     Gentoo::MetaEbuild::Spec::Base->_spec_dir(
-        dir($FindBin::Bin)->parent->subdir('share')
+        path($FindBin::Bin)->parent->child('share')
     );
 
     # Code as per usual.
 
-    my $shareroot = dir($FindBin::Bin)->parent();
+    my $shareroot = path($FindBin::Bin)->parent();
 
 =cut
 
@@ -58,10 +58,10 @@ use Moose;
 use MooseX::ClassAttribute;
 
 use File::ShareDir qw( module_dir );
-use Path::Class qw( dir file );
+use Path::Tiny qw( path );
 use MooseX::Types::Moose qw( :all );
 use MooseX::Types::Perl qw( VersionObject );
-use MooseX::Types::Path::Class qw( Dir File );
+use MooseX::Types::Path::Tiny qw( AbsPath AbsDir );
 use Scalar::Util qw( blessed );
 use MooseX::Has::Sugar;
 use version;
@@ -84,7 +84,7 @@ sub _build__decoder {
 }
 
 class_has '_spec_dir' => (
-  isa => Dir,
+  isa => AbsDir,
   rw, lazy_build,
 );
 
@@ -102,7 +102,7 @@ sub _build__spec_dir {
   else {
     $classname = $self;
   }
-  return dir( module_dir($classname) );
+  return path( module_dir($classname) );
 }
 
 class_has '_version' => (
@@ -147,7 +147,7 @@ sub _opt_check {
 sub _spec_file {
   my ( $self, $opts ) = @_;
   $opts = $self->_opt_check($opts);
-  return $self->_spec_dir->file( $opts->{version}->normal . $self->_extension );
+  return $self->_spec_dir->child( $opts->{version}->normal . $self->_extension );
 }
 
 sub _spec_data {

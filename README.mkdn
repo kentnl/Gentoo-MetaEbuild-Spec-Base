@@ -44,16 +44,16 @@ and then ship a directory of Data::Rx spec files as the Module ShareDir for that
 The only fun thing with testing is the File::ShareDir directory hasn't been installed yet, but its simple to get around.
 
     use FindBin;
-    use Path::Class qw( dir );
+    use Path::Tiny qw( path );
     use Gentoo::MetaEbuild::Spec::Base;
 
     Gentoo::MetaEbuild::Spec::Base->_spec_dir(
-        dir($FindBin::Bin)->parent->subdir('share')
+        path($FindBin::Bin)->parent->child('share')
     );
 
     # Code as per usual.
 
-    my $shareroot = dir($FindBin::Bin)->parent();
+    my $shareroot = path($FindBin::Bin)->parent();
 
 # AUTHOR
 
