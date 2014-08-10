@@ -1,28 +1,26 @@
+use 5.008;    # utf8
 use strict;
 use warnings;
+use utf8;
 
 package Gentoo::MetaEbuild::Spec::Base;
-BEGIN {
-  $Gentoo::MetaEbuild::Spec::Base::AUTHORITY = 'cpan:KENTNL';
-}
-{
-  $Gentoo::MetaEbuild::Spec::Base::VERSION = '0.1.4';
-}
+
+our $VERSION = '1.000000';
 
 # ABSTRACT: A Base Class for Gentoo MetaEbuild Specifications.
 
-
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 use Moose;
-use MooseX::ClassAttribute;
+use MooseX::ClassAttribute qw( class_has );
 
 use File::ShareDir qw( module_dir );
-use Path::Class qw( dir file );
-use MooseX::Types::Moose qw( :all );
+use Path::Tiny qw( path );
+use MooseX::Types::Moose qw( Str CodeRef );
 use MooseX::Types::Perl qw( VersionObject );
-use MooseX::Types::Path::Class qw( Dir File );
+use MooseX::Types::Path::Tiny qw( AbsPath AbsDir );
 use Scalar::Util qw( blessed );
-use MooseX::Has::Sugar;
+use MooseX::Has::Sugar qw( ro lazy_build rw coerce lazy );
 use version;
 
 use namespace::autoclean;
@@ -35,15 +33,15 @@ class_has '_decoder' => (
 );
 
 sub _build__decoder {
-  require JSON::XS;
-  my $decoder = JSON::XS->new()->utf8(1)->relaxed(1);
+  require JSON::MaybeXS;
+  my $decoder = JSON::MaybeXS->new()->utf8(1)->relaxed(1);
   return sub {
     $decoder->decode(shift);
   };
 }
 
 class_has '_spec_dir' => (
-  isa => Dir,
+  isa => AbsDir,
   rw, lazy_build,
 );
 
@@ -61,7 +59,7 @@ sub _build__spec_dir {
   else {
     $classname = $self;
   }
-  return dir( module_dir($classname) );
+  return path( module_dir($classname) );
 }
 
 class_has '_version' => (
@@ -93,9 +91,11 @@ sub _opt_check {
   my ( $self, $opts ) = @_;
   if ( not exists $opts->{version} ) {
     $opts->{version} = $self->_version;
-  } elsif( blessed $opts->{version} ){
+  }
+  elsif ( blessed $opts->{version} ) {
 
-  } else {
+  }
+  else {
     $opts->{version} = version->parse( $opts->{version} );
   }
   return $opts;
@@ -104,7 +104,7 @@ sub _opt_check {
 sub _spec_file {
   my ( $self, $opts ) = @_;
   $opts = $self->_opt_check($opts);
-  return $self->_spec_dir->file( $opts->{version}->normal . $self->_extension );
+  return $self->_spec_dir->child( $opts->{version}->normal . $self->_extension );
 }
 
 sub _spec_data {
@@ -120,19 +120,74 @@ sub _schema {
 }
 
 
+
+
+
+
+
+
+
+
+
 sub check {
-  my ( $self, $data, $opts ) = @_;
+  my ( $self, $json_data, $opts ) = @_;
   $opts = $self->_opt_check($opts);
-  return $self->_schema($opts)->check($data);
+  return $self->_schema($opts)->check($json_data);
 }
 
 __PACKAGE__->meta->make_immutable;
 no Moose;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 1;
 
 __END__
+
 =pod
+
+=encoding UTF-8
 
 =head1 NAME
 
@@ -140,7 +195,7 @@ Gentoo::MetaEbuild::Spec::Base - A Base Class for Gentoo MetaEbuild Specificatio
 
 =head1 VERSION
 
-version 0.1.4
+version 1.000000
 
 =head1 SYNOPSIS
 
@@ -180,16 +235,16 @@ and then ship a directory of Data::Rx spec files as the Module ShareDir for that
 The only fun thing with testing is the File::ShareDir directory hasn't been installed yet, but its simple to get around.
 
     use FindBin;
-    use Path::Class qw( dir );
+    use Path::Tiny qw( path );
     use Gentoo::MetaEbuild::Spec::Base;
 
     Gentoo::MetaEbuild::Spec::Base->_spec_dir(
-        dir($FindBin::Bin)->parent->subdir('share')
+        path($FindBin::Bin)->parent->child('share')
     );
 
     # Code as per usual.
 
-    my $shareroot = dir($FindBin::Bin)->parent();
+    my $shareroot = path($FindBin::Bin)->parent();
 
 =head1 AUTHOR
 
@@ -197,10 +252,9 @@ Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Kent Fredric <kentnl@cpan.org>.
+This software is copyright (c) 2014 by Kent Fredric <kentnl@cpan.org>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

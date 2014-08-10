@@ -3,9 +3,10 @@ use warnings;
 
 use Test::More 0.96;
 use FindBin;
-use Test::File::ShareDir
-  -root  => "$FindBin::Bin/../",
-  -share => { -module => { 'Gentoo::MetaEbuild::Spec::Base' => 't/fake_spec' } };
+use Test::File::ShareDir::Module {
+  '-root'                          => "$FindBin::Bin/../",
+  'Gentoo::MetaEbuild::Spec::Base' => 't/fake_spec',
+};
 
 use Gentoo::MetaEbuild::Spec::Base;
 

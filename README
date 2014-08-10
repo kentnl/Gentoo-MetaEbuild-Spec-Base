@@ -3,7 +3,7 @@ NAME
     Specifications.
 
 VERSION
-    version 0.1.4
+    version 1.000000
 
 SYNOPSIS
         use Gentoo::MetaEbuild::Spec::Base; # or some derived class
@@ -42,22 +42,22 @@ TESTING
     been installed yet, but its simple to get around.
 
         use FindBin;
-        use Path::Class qw( dir );
+        use Path::Tiny qw( path );
         use Gentoo::MetaEbuild::Spec::Base;
 
         Gentoo::MetaEbuild::Spec::Base->_spec_dir(
-            dir($FindBin::Bin)->parent->subdir('share')
+            path($FindBin::Bin)->parent->child('share')
         );
 
         # Code as per usual.
 
-        my $shareroot = dir($FindBin::Bin)->parent();
+        my $shareroot = path($FindBin::Bin)->parent();
 
 AUTHOR
     Kent Fredric <kentnl@cpan.org>
 
 COPYRIGHT AND LICENSE
-    This software is copyright (c) 2012 by Kent Fredric <kentnl@cpan.org>.
+    This software is copyright (c) 2014 by Kent Fredric <kentnl@cpan.org>.
 
     This is free software; you can redistribute it and/or modify it under
     the same terms as the Perl 5 programming language system itself.
