@@ -59,11 +59,11 @@ use MooseX::ClassAttribute qw( class_has );
 
 use File::ShareDir qw( module_dir );
 use Path::Tiny qw( path );
-use MooseX::Types::Moose qw( :all );
+use MooseX::Types::Moose qw( Str CodeRef );
 use MooseX::Types::Perl qw( VersionObject );
 use MooseX::Types::Path::Tiny qw( AbsPath AbsDir );
 use Scalar::Util qw( blessed );
-use MooseX::Has::Sugar qw( ro lazy_build rw coerce );
+use MooseX::Has::Sugar qw( ro lazy_build rw coerce lazy );
 use version;
 
 use namespace::autoclean;
