@@ -76,8 +76,8 @@ class_has '_decoder' => (
 );
 
 sub _build__decoder {
-  require JSON::XS;
-  my $decoder = JSON::XS->new()->utf8(1)->relaxed(1);
+  require JSON::MaybeXS;
+  my $decoder = JSON::MaybeXS->new()->utf8(1)->relaxed(1);
   return sub {
     $decoder->decode(shift);
   };
