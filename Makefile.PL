@@ -48,7 +48,6 @@ my %WriteMakefileArgs = (
     "File::Spec" => 0,
     "FindBin" => 0,
     "Test::Fatal" => 0,
-    "Test::File::ShareDir" => 0,
     "Test::File::ShareDir::Module" => 0,
     "Test::More" => "0.96"
   },
@@ -76,7 +75,6 @@ my %FallbackPrereqs = (
   "Path::Tiny" => 0,
   "Scalar::Util" => 0,
   "Test::Fatal" => 0,
-  "Test::File::ShareDir" => 0,
   "Test::File::ShareDir::Module" => 0,
   "Test::More" => "0.96",
   "namespace::autoclean" => 0,
