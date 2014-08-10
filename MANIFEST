@@ -12,10 +12,12 @@ README
 dist.ini
 dist.ini.meta
 lib/Gentoo/MetaEbuild/Spec/Base.pm
+maint/perlcritic.rc.gen.pl
 misc/Changes.deps
 misc/Changes.deps.all
 misc/Changes.deps.dev
 misc/Changes.deps.opt
+misc/perlcritic.deps
 perlcritic.rc
 share/v0.1.0.json
 t/00-compile/lib_Gentoo_MetaEbuild_Spec_Base_pm.t
