@@ -75,6 +75,7 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  [Added / test requires]
  - ExtUtils::MakeMaker
  - File::Spec
+ - Test::File::ShareDir::Module
 
  [Changed / develop suggests]
  - Dist::Zilla::PluginBundle::Author::KENTNL v1.2.0 → 2.016007
@@ -102,6 +103,7 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  [Removed / test requires]
  - File::Find
  - File::Temp
+ - Test::File::ShareDir
 
 0.1.4 2012-01-04T05:16:00Z
  [Added / runtime requires]
