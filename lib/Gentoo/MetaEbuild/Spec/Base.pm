@@ -3,6 +3,8 @@ use warnings;
 
 package Gentoo::MetaEbuild::Spec::Base;
 
+our $VERSION = '1.000000';
+
 # ABSTRACT: A Base Class for Gentoo MetaEbuild Specifications.
 
 =head1 SYNOPSIS
