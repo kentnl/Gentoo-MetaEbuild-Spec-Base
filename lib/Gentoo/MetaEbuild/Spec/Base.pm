@@ -181,6 +181,8 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Gentoo::MetaEbuild::Spec::Base - A Base Class for Gentoo MetaEbuild Specifications.
