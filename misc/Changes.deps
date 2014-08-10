@@ -6,6 +6,7 @@ This file contains changes in REQUIRED dependencies for standard CPAN phases (co
  - File::ShareDir::Install 0.06
 
  [Added / runtime requires]
+ - JSON::MaybeXS
  - MooseX::Types::Path::Tiny
  - Path::Tiny
  - utf8
@@ -24,6 +25,7 @@ This file contains changes in REQUIRED dependencies for standard CPAN phases (co
  - Module::Build 0.3601
 
  [Removed / runtime requires]
+ - JSON::XS
  - MooseX::Types::Path::Class
  - Path::Class
 
