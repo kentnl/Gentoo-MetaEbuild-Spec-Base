@@ -132,9 +132,11 @@ sub _opt_check {
   my ( $self, $opts ) = @_;
   if ( not exists $opts->{version} ) {
     $opts->{version} = $self->_version;
-  } elsif( blessed $opts->{version} ){
+  }
+  elsif ( blessed $opts->{version} ) {
 
-  } else {
+  }
+  else {
     $opts->{version} = version->parse( $opts->{version} );
   }
   return $opts;
