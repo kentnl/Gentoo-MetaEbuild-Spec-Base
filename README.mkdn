@@ -4,7 +4,7 @@ Gentoo::MetaEbuild::Spec::Base - A Base Class for Gentoo MetaEbuild Specificatio
 
 # VERSION
 
-version 1.000000
+version 1.000001
 
 # SYNOPSIS
 
