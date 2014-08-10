@@ -20,6 +20,7 @@ $bundle->configure;
 
 my @stopwords = (
   qw(
+    MetaEbuild json ShareDir
     )
 );
 for my $wordlist (@stopwords) {
