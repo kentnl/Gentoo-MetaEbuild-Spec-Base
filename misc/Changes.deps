@@ -1,0 +1,24 @@
+This file contains changes in REQUIRED dependencies for standard CPAN phases (configure/build/runtime/test)
+
+0.1.4 2012-01-04T05:16:00Z
+ [Added / runtime requires]
+ - perl v5.10.0
+ - strict
+ - warnings
+
+ [Removed / test requires]
+ - English
+
+0.1.3 2011-02-21T13:40:12Z
+ [Added / test requires]
+ - Test::File::ShareDir
+
+0.1.2 2011-02-21T09:38:04Z
+ [Added / runtime requires]
+ - namespace::autoclean
+
+ [Added / test requires]
+ - Test::Fatal
+
+0.1.1 2011-02-21T07:52:03Z
+
