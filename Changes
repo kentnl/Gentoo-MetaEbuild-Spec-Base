@@ -1,13 +1,13 @@
 Release history for Gentoo-MetaEbuild-Spec-Base
 
-0.1.5 2014-08-10T07:46:28Z
+1.000000 2014-08-10T10:00:20Z
  [Dependencies::Stats]
  - Dependencies changed since 0.1.4, see misc/*.deps* for details
- - build: ↑1
- - configure: ↑1
- - develop: +48 -1 (recommends: -1, suggests: +1 ↑1)
+ - build: -1
+ - configure: +2 -1 (recommends: +1)
+ - develop: +47 -1 (recommends: -1, suggests: +1 ↑1)
  - runtime: ↓1
- - test: +2 ↑1 -2 (recommends: +1)
+ - test: +2 -2 (recommends: +3)
 
 0.1.4 2012-01-04T05:16:00Z
  - Maintenance release.

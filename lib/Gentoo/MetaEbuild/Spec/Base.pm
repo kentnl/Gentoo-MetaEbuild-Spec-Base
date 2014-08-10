@@ -2,8 +2,10 @@ use strict;
 use warnings;
 
 package Gentoo::MetaEbuild::Spec::Base;
-$Gentoo::MetaEbuild::Spec::Base::VERSION = '0.1.5';
+
 # ABSTRACT: A Base Class for Gentoo MetaEbuild Specifications.
+
+our $VERSION = '1.000000';
 
 
 
@@ -185,7 +187,7 @@ Gentoo::MetaEbuild::Spec::Base - A Base Class for Gentoo MetaEbuild Specificatio
 
 =head1 VERSION
 
-version 0.1.5
+version 1.000000
 
 =head1 SYNOPSIS
 
