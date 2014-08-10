@@ -173,9 +173,9 @@ sub _schema {
 =cut
 
 sub check {
-  my ( $self, $data, $opts ) = @_;
+  my ( $self, $json_data, $opts ) = @_;
   $opts = $self->_opt_check($opts);
-  return $self->_schema($opts)->check($data);
+  return $self->_schema($opts)->check($json_data);
 }
 
 __PACKAGE__->meta->make_immutable;
