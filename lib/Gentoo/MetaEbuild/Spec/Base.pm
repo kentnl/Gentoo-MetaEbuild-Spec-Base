@@ -7,6 +7,8 @@ our $VERSION = '1.000000';
 
 # ABSTRACT: A Base Class for Gentoo MetaEbuild Specifications.
 
+# AUTHORITY
+
 =head1 SYNOPSIS
 
     use Gentoo::MetaEbuild::Spec::Base; # or some derived class
