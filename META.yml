@@ -32,9 +32,9 @@ requires:
   MooseX::ClassAttribute: '0'
   MooseX::Has::Sugar: '0'
   MooseX::Types::Moose: '0'
-  MooseX::Types::Path::Class: '0'
+  MooseX::Types::Path::Tiny: '0'
   MooseX::Types::Perl: '0'
-  Path::Class: '0'
+  Path::Tiny: '0'
   Scalar::Util: '0'
   namespace::autoclean: '0'
   perl: '5.008'
@@ -48,11 +48,10 @@ resources:
   repository: https://github.com/kentnl/Gentoo-MetaEbuild-Spec-Base.git
 version: '1.000000'
 x_BuiltWith:
-  failures:
-    Data::Rx: 'module was not found in INC'
   modules:
     CPAN::Meta: '2.142060'
     Carp: '1.34'
+    Data::Rx: '0.200006'
     Dist::Zilla::App::Command::bakeini: '0.001001'
     Dist::Zilla::Plugin::Authority: '1.006'
     Dist::Zilla::Plugin::AutoPrereqs: '5.020'
@@ -107,9 +106,9 @@ x_BuiltWith:
     MooseX::ClassAttribute: '0.27'
     MooseX::Has::Sugar: '1.000003'
     MooseX::Types::Moose: '0.44'
-    MooseX::Types::Path::Class: '0.06'
+    MooseX::Types::Path::Tiny: '0.010'
     MooseX::Types::Perl: '0.101343'
-    Path::Class: '0.33'
+    Path::Tiny: '0.055'
     Pod::Coverage::TrustPod: '0.100003'
     Scalar::Util: '1.39'
     Test::CPAN::Changes: '0.30'
