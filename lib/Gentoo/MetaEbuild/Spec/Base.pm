@@ -11,49 +11,6 @@ our $VERSION = '1.000000';
 
 # AUTHORITY
 
-=head1 SYNOPSIS
-
-    use Gentoo::MetaEbuild::Spec::Base; # or some derived class
-    Gentoo::MetaEbuild::Spec::Base->check( $datastructure );
-
-This base-class only validates the most basic of basic, that the data is a  { } using Data::Rx
-and using the shipped File::ShareDir v1.0.0.json spec to do that.
-
-This will be more practical in consuming classes as they'll override selected methods/ship different spec files,
-but maintain the same useful interface.
-
-=cut
-
-=head1 EXTENDING
-
-Extending should be this simple:
-
-    package FooBarBaz;
-    use Moose;
-    extends 'Gentoo::MetaEbuild::Spec::Base';
-
-    1;
-
-and then ship a directory of Data::Rx spec files as the Module ShareDir for that module.
-
-=head1 TESTING
-
-The only fun thing with testing is the File::ShareDir directory hasn't been installed yet, but its simple to get around.
-
-    use FindBin;
-    use Path::Tiny qw( path );
-    use Gentoo::MetaEbuild::Spec::Base;
-
-    Gentoo::MetaEbuild::Spec::Base->_spec_dir(
-        path($FindBin::Bin)->parent->child('share')
-    );
-
-    # Code as per usual.
-
-    my $shareroot = path($FindBin::Bin)->parent();
-
-=cut
-
 use Moose;
 use MooseX::ClassAttribute qw( class_has );
 
@@ -180,5 +137,48 @@ sub check {
 
 __PACKAGE__->meta->make_immutable;
 no Moose;
+
+=head1 SYNOPSIS
+
+    use Gentoo::MetaEbuild::Spec::Base; # or some derived class
+    Gentoo::MetaEbuild::Spec::Base->check( $datastructure );
+
+This base-class only validates the most basic of basic, that the data is a  { } using Data::Rx
+and using the shipped File::ShareDir v1.0.0.json spec to do that.
+
+This will be more practical in consuming classes as they'll override selected methods/ship different spec files,
+but maintain the same useful interface.
+
+=cut
+
+=head1 EXTENDING
+
+Extending should be this simple:
+
+    package FooBarBaz;
+    use Moose;
+    extends 'Gentoo::MetaEbuild::Spec::Base';
+
+    1;
+
+and then ship a directory of Data::Rx spec files as the Module ShareDir for that module.
+
+=head1 TESTING
+
+The only fun thing with testing is the File::ShareDir directory hasn't been installed yet, but its simple to get around.
+
+    use FindBin;
+    use Path::Tiny qw( path );
+    use Gentoo::MetaEbuild::Spec::Base;
+
+    Gentoo::MetaEbuild::Spec::Base->_spec_dir(
+        path($FindBin::Bin)->parent->child('share')
+    );
+
+    # Code as per usual.
+
+    my $shareroot = path($FindBin::Bin)->parent();
+
+=cut
 
 1;
