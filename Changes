@@ -17,6 +17,7 @@ Release history for Gentoo-MetaEbuild-Spec-Base
  [03 Some critical components changed]
  - Path::Class -> Path::Tiny
  - JSON::XS -> JSON::MaybeXS
+ - Test::File::ShareDir -> Test::File::ShareDir::Module`
 
  [Dependencies::Stats]
  - Dependencies changed since 0.1.4, see misc/*.deps* for details
