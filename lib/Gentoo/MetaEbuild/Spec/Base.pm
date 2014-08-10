@@ -3,9 +3,11 @@ use warnings;
 
 package Gentoo::MetaEbuild::Spec::Base;
 
+our $VERSION = '1.000000';
+
 # ABSTRACT: A Base Class for Gentoo MetaEbuild Specifications.
 
-our $VERSION = '1.000000';
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 
 
