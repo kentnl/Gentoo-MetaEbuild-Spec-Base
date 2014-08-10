@@ -113,6 +113,7 @@
             "FindBin" : "0",
             "Test::Fatal" : "0",
             "Test::File::ShareDir" : "0",
+            "Test::File::ShareDir::Module" : "0",
             "Test::More" : "0.96"
          }
       }
@@ -204,6 +205,7 @@
          "Test::CPAN::Meta" : "0.23",
          "Test::Fatal" : "0.013",
          "Test::File::ShareDir" : "1.000004",
+         "Test::File::ShareDir::Module" : "1.000004",
          "Test::Kwalitee" : "1.19",
          "Test::More" : "1.001003",
          "Test::Pod" : "1.48",
