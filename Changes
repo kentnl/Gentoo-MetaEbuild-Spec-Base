@@ -1,6 +1,6 @@
 Release history for Gentoo-MetaEbuild-Spec-Base
 
-1.000000 2014-08-10T10:30:57Z
+1.000000 2014-08-10T10:38:45Z
  [00 Major]
  - Significant changes that may affect hand-operated downstreams.
 
@@ -17,6 +17,7 @@ Release history for Gentoo-MetaEbuild-Spec-Base
  [03 Some critical components changed]
  - Path::Class -> Path::Tiny
  - JSON::XS -> JSON::MaybeXS
+ - Test::File::ShareDir -> Test::File::ShareDir::Module`
 
  [Dependencies::Stats]
  - Dependencies changed since 0.1.4, see misc/*.deps* for details
@@ -24,7 +25,7 @@ Release history for Gentoo-MetaEbuild-Spec-Base
  - configure: +2 -1 (recommends: +1)
  - develop: +48 -1 (recommends: -1, suggests: +1 ↑1)
  - runtime: +4 ↓1 -3
- - test: +3 -2 (recommends: +3)
+ - test: +3 -3 (recommends: +3)
 
  [Misc]
  - Report versions moved to Test::ReportVersions
