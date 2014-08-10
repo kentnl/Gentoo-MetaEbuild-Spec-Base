@@ -1,6 +1,23 @@
 Release history for Gentoo-MetaEbuild-Spec-Base
 
 {{$NEXT}}
+ [00 Major]
+ - Significant changes that may affect hand-operated downstreams.
+
+ [01 Version Scheme]
+ - Migrated from x.y.z to x.yyyzzz
+ - This is the primary reason for the 1.x on the box
+ - https://questhub.io/realm/perl/quest/5388d3a9bbd0be2224000129
+
+ [02 Tooling Change]
+ - Moved to ExtUtils::MakeMaker
+ - Tookit dependencies for "latest" things now only "recommended"
+ - https://questhub.io/realm/perl/quest/5388cc12bbd0be5b2500011f
+
+ [03 Some critical components changed]
+ - Path::Class -> Path::Tiny
+ - JSON::XS -> JSON::MaybeXS
+
  [Dependencies::Stats]
  - Dependencies changed since 0.1.4, see misc/*.deps* for details
  - build: -1
@@ -8,6 +25,11 @@ Release history for Gentoo-MetaEbuild-Spec-Base
  - develop: +48 -1 (recommends: -1, suggests: +1 ↑1)
  - runtime: +4 ↓1 -3
  - test: +2 -2 (recommends: +3)
+
+ [Misc]
+ - Report versions moved to Test::ReportVersions
+ - Compile test moved to ::PerFile
+ - Repo moved to kentnl org
 
 0.1.4 2012-01-04T05:16:00Z
  - Maintenance release.
