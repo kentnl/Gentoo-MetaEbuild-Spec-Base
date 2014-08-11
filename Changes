@@ -1,6 +1,9 @@
 Release history for Gentoo-MetaEbuild-Spec-Base
 
 {{$NEXT}}
+ [Dependencies::Stats]
+ - Dependencies changed since 1.000000, see misc/*.deps* for details
+ - develop: +1 (suggests: ↑1)
 
 1.000000 2014-08-10T11:08:49Z
  [00 Major]
@@ -30,7 +33,7 @@ Release history for Gentoo-MetaEbuild-Spec-Base
  - test: +3 -3 (recommends: +3)
 
  [Misc]
- - Report versions moved to Test::ReportVersions
+ - Report versions moved to Test::ReportPrereqs
  - Compile test moved to ::PerFile
  - Repo moved to kentnl org
 
