@@ -138,6 +138,8 @@ sub check {
 __PACKAGE__->meta->make_immutable;
 no Moose;
 
+1;
+
 =head1 SYNOPSIS
 
     use Gentoo::MetaEbuild::Spec::Base; # or some derived class
@@ -180,5 +182,3 @@ The only fun thing with testing is the File::ShareDir directory hasn't been inst
     my $shareroot = path($FindBin::Bin)->parent();
 
 =cut
-
-1;
