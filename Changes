@@ -1,9 +1,17 @@
 Release history for Gentoo-MetaEbuild-Spec-Base
 
-1.000001 2014-08-15T22:58:57Z
+1.000001 2014-08-15T23:02:42Z
+ [00 Trivial]
+ - CPANDAY!
+ - no code changes.
+ - whitespace reduced.
+
  [Dependencies::Stats]
  - Dependencies changed since 1.000000, see misc/*.deps* for details
  - develop: +1 (suggests: ↑1)
+
+ [Misc]
+ - Improve source side POD to reduce build side whitespace.
 
 1.000000 2014-08-10T11:08:49Z
  [00 Major]
