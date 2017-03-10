@@ -78,6 +78,9 @@ class_has '_schema_creator' => (
   handles => { _make_schema => 'execute', },
 );
 
+__PACKAGE__->meta->make_immutable;
+no Moose;
+
 sub _build__schema_creator {
   require Data::Rx;
   my $rx = Data::Rx->new();
@@ -133,9 +136,6 @@ sub check {
   $opts = $self->_opt_check($opts);
   return $self->_schema($opts)->check($json_data);
 }
-
-__PACKAGE__->meta->make_immutable;
-no Moose;
 
 1;
 
