@@ -1,6 +1,8 @@
 This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL dependencies for all phases (configure/build/runtime/test/develop)
 
-1.000002
+1.000003
+
+1.000002 2017-03-10T10:10:34Z
  [Added / configure recommends]
  - File::ShareDir::Install 0.10
 

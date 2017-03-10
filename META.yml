@@ -24,7 +24,7 @@ name: Gentoo-MetaEbuild-Spec-Base
 provides:
   Gentoo::MetaEbuild::Spec::Base:
     file: lib/Gentoo/MetaEbuild/Spec/Base.pm
-    version: '1.000002'
+    version: '1.000003'
 recommends:
   Moose: '2.000'
   Path::Tiny: '0.058'
@@ -50,4 +50,4 @@ resources:
   bugtracker: https://github.com/kentnl/Gentoo-MetaEbuild-Spec-Base/issues
   homepage: https://github.com/kentnl/Gentoo-MetaEbuild-Spec-Base
   repository: https://github.com/kentnl/Gentoo-MetaEbuild-Spec-Base.git
-version: '1.000002'
+version: '1.000003'

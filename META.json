@@ -142,7 +142,7 @@
    "provides" : {
       "Gentoo::MetaEbuild::Spec::Base" : {
          "file" : "lib/Gentoo/MetaEbuild/Spec/Base.pm",
-         "version" : "1.000002"
+         "version" : "1.000003"
       }
    },
    "release_status" : "stable",
@@ -157,7 +157,7 @@
          "web" : "https://github.com/kentnl/Gentoo-MetaEbuild-Spec-Base"
       }
    },
-   "version" : "1.000002",
+   "version" : "1.000003",
    "x_BuiltWith" : {
       "external_file" : "misc/built_with.json"
    },
@@ -661,7 +661,7 @@
                   "branch" : null,
                   "changelog" : "Changes",
                   "signed" : 0,
-                  "tag" : "1.000002-source",
+                  "tag" : "1.000003-source",
                   "tag_format" : "%v-source",
                   "tag_message" : "v%v"
                },
@@ -755,7 +755,7 @@
                   "branch" : "releases",
                   "changelog" : "Changes",
                   "signed" : 0,
-                  "tag" : "1.000002",
+                  "tag" : "1.000003",
                   "tag_format" : "%v",
                   "tag_message" : "v%v"
                },
