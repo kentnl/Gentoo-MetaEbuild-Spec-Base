@@ -2,7 +2,7 @@
 use strict;
 use warnings;
 
-use 5.008;
+use 5.006;
 
 use ExtUtils::MakeMaker;
 
@@ -21,7 +21,7 @@ my %WriteMakefileArgs = (
   },
   "DISTNAME" => "Gentoo-MetaEbuild-Spec-Base",
   "LICENSE" => "perl",
-  "MIN_PERL_VERSION" => "5.008",
+  "MIN_PERL_VERSION" => "5.006",
   "NAME" => "Gentoo::MetaEbuild::Spec::Base",
   "PREREQ_PM" => {
     "Carp" => 0,
@@ -38,7 +38,6 @@ my %WriteMakefileArgs = (
     "Scalar::Util" => 0,
     "namespace::autoclean" => 0,
     "strict" => 0,
-    "utf8" => 0,
     "version" => 0,
     "warnings" => 0
   },
@@ -48,7 +47,7 @@ my %WriteMakefileArgs = (
     "FindBin" => 0,
     "Test::Fatal" => 0,
     "Test::File::ShareDir::Module" => 0,
-    "Test::More" => "0.96"
+    "Test::More" => 0
   },
   "VERSION" => "1.000002",
   "test" => {
@@ -75,10 +74,9 @@ my %FallbackPrereqs = (
   "Scalar::Util" => 0,
   "Test::Fatal" => 0,
   "Test::File::ShareDir::Module" => 0,
-  "Test::More" => "0.96",
+  "Test::More" => 0,
   "namespace::autoclean" => 0,
   "strict" => 0,
-  "utf8" => 0,
   "version" => 0,
   "warnings" => 0
 );
