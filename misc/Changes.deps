@@ -1,6 +1,11 @@
 This file contains changes in REQUIRED dependencies for standard CPAN phases (configure/build/runtime/test)
 
 1.000002
+ [Added / configure requires]
+ - perl 5.008
+
+ [Added / test requires]
+ - perl 5.008
 
 1.000001 2014-08-15T23:02:42Z
 
@@ -60,4 +65,3 @@ This file contains changes in REQUIRED dependencies for standard CPAN phases (co
  - Test::Fatal
 
 0.1.1 2011-02-21T07:52:03Z
-
