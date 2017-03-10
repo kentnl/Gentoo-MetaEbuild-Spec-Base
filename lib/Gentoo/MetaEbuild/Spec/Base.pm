@@ -4,7 +4,7 @@ use warnings;
 
 package Gentoo::MetaEbuild::Spec::Base;
 
-our $VERSION = '1.000002';
+our $VERSION = '1.000003';
 
 # ABSTRACT: A Base Class for Gentoo MetaEbuild Specifications.
 

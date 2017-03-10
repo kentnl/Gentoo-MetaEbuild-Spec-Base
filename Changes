@@ -1,6 +1,8 @@
 Release history for Gentoo-MetaEbuild-Spec-Base
 
 {{$NEXT}}
+
+1.000002 2017-03-10T10:10:34Z becb985
  - Bugfix: Avoid failures with -Ddefault_inc_excludes_dot
  - Support for older Test::More
 
