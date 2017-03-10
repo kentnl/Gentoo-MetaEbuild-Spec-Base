@@ -1,6 +1,14 @@
 Release history for Gentoo-MetaEbuild-Spec-Base
 
 {{$NEXT}}
+ - Bugfix: Avoid failures with -Ddefault_inc_excludes_dot
+
+ [Dependencies::Stats]
+ - Dependencies changed since 1.000001, see misc/*.deps* for details
+ - configure: +1 (recommends: +1 ↑1)
+ - develop: +15 ↑4 -3 (recommends: +1, suggests: ↑2)
+ - runtime: (recommends: +2)
+ - test: +1 (recommends: ↑1 ↓1)
 
 1.000001 2014-08-15T23:02:42Z
  [00 Trivial]
@@ -90,4 +98,3 @@ Release history for Gentoo-MetaEbuild-Spec-Base
 
 0.1.0 2011-02-21T07:12:09Z
  - First version, released on an unsuspecting world.
-
