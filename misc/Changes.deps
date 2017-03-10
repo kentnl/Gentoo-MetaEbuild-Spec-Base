@@ -10,6 +10,9 @@ This file contains changes in REQUIRED dependencies for standard CPAN phases (co
  [Changed / runtime requires]
  - perl 5.008 → 5.006
 
+ [Changed / test requires]
+ - Test::More 0.96 → 0
+
  [Removed / runtime requires]
  - utf8
 

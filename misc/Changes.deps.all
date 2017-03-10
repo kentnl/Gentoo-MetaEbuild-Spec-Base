@@ -54,6 +54,9 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  - ExtUtils::MakeMaker 6.98 → 7.00
  - Test::More 1.001003 → 0.99
 
+ [Changed / test requires]
+ - Test::More 0.96 → 0
+
  [Removed / develop requires]
  - Dist::Zilla::Plugin::EOLTests
  - Dist::Zilla::Plugin::MetaYAML
