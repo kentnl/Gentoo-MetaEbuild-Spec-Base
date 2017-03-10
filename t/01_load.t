@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 
-use Test::More 0.96;
+use Test::More tests => 1;
 use FindBin;
 
 use Test::File::ShareDir::Module {
@@ -12,5 +12,3 @@ use Test::File::ShareDir::Module {
 use Gentoo::MetaEbuild::Spec::Base;
 
 ok( Gentoo::MetaEbuild::Spec::Base->check( {} ), '{} is default spec' );
-
-done_testing;

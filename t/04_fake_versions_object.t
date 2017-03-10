@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 
-use Test::More 0.96;
+use Test::More tests => 4;
 use FindBin;
 use Test::File::ShareDir::Module {
   '-root'                          => "$FindBin::Bin/../",
@@ -14,5 +14,3 @@ ok( Gentoo::MetaEbuild::Spec::Base->check( {}, { version => version->parse('0.1.
 ok( !Gentoo::MetaEbuild::Spec::Base->check( [], { version => version->parse('0.1.0') } ), '[] is not 0.1.0 spec' );
 ok( !Gentoo::MetaEbuild::Spec::Base->check( {}, { version => version->parse('0.1.1') } ), '{} is not 0.1.1 spec' );
 ok( Gentoo::MetaEbuild::Spec::Base->check( [], { version => version->parse('0.1.1') } ), '[] is 0.1.1 spec' );
-
-done_testing;
